@@ -1,0 +1,21 @@
+/* Asterisk selectors to override default styles */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Styles for the header, main content, and footer sections */
+
+header {
+    background-color: lightcoral;
+}
+
+main{
+    background-color: lightblue;
+}
+
+footer {
+    background-color: orangered;
+}
+
