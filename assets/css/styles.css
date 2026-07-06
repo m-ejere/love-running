@@ -1,3 +1,6 @@
+/*Google fonts import*/
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 /* Asterisk selectors to override default styles */
 
 *{
@@ -12,6 +15,7 @@ body{
     flex-direction: column;
     /* Generic project styles */
     color: #3a3a3a;
+    font-family: 'Lato', sans-serif;
 }
 /* Styles for the header, main content, and footer sections */
 
@@ -28,4 +32,6 @@ main{
 footer {
     background-color: orangered;
 }
+
+
 
