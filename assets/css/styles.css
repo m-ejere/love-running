@@ -82,15 +82,72 @@ h1{
 }
 
 /* Styles for the main content and footer sections */
+
 main{
     background-color: lightblue;
     padding-top: 80px; /* Pushes content down so the fixed header doesn't hide it */
     padding-left: 1rem;
     padding-right: 1rem;
     flex: 1 0 auto;
+    margin-top: 47px;
 }
 
-footer {
-    background-color: orangered;
-    padding: 1rem;
+
+/* Social Network Footer Styles */
+#social-networks {
+    text-align: center;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
+#social-networks i {
+    font-size: 160%;
+    padding: 5%;
+    color: #3a3a3a;
+}
+
+/* Media Queries*/
+
+/* Tablet devices and larger (768px and up) */
+@media screen and (min-width: 768px) {
+    nav {
+        display: block;
+        position: relative;
+        box-shadow: none;
+        width: fit-content;
+        padding-right: 1rem;
+    }
+
+    #menu {
+        display: flex;
+    }
+
+    #menu > li {
+        margin-bottom: 0; /* Reset mobile margin */
+        padding-left: 1rem;
+    }
+
+    #nav-toggle-label {
+        display: none;
+    }
+
+    #logo {
+        font-size: 280%;
+        line-height: 75px;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    main {
+        margin-top: 79px; /* Adjust spacing since the header became taller */
+    }
+}
+
+/* Laptop devices and larger (992px and up) */
+@media screen and (min-width: 992px) {
+    #menu a:hover {
+        border-bottom: 1px solid #9b3737;
+    }
 }
