@@ -23,6 +23,9 @@ header {
     background-color: lightcoral;
 }
 
+h1{
+    font-family: 'Oswald', sans-serif;
+}
 main{
     background-color: lightblue;
     /* Ensure the main content takes up available space */
