@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 /* Asterisk selectors to override default styles */
-
 *{
     margin: 0;
     padding: 0;
@@ -15,64 +14,83 @@ body{
     flex-direction: column;
     /* Generic project styles */
     color: #3a3a3a;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Cantarell', sans-serif;
 }
-/* Styles for the header, main content, and footer sections */
 
+/* Styles for the header, main content, and footer sections */
 header {
     background-color: white;
-    padding: 0;
+    padding: 1rem;
     position: fixed;
     z-index: 99;
     width: 100%;
     box-shadow: 0 2px 2px #3a3a3a;
-
-
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 }
 
 header a {
     text-decoration: none;
     color: inherit;
-
-
 }
 
 /* Navbar styles with dropdown menu */
-
 nav{
     position: absolute;
     background-color: white;
+    width: 100%;
+    left: 0;
+    padding: 0 1rem;
+    box-shadow: 0 2px 2px #3a3a3a;
+    display: none;
+}
+
+/* Nav toggle checkbox trigger */
+#nav-toggle:checked ~ nav{
+    display: block;
+}
+
+#nav-toggle{
+    display: none;
+}
+
+.nav-toggle-label{
+    font-size: 2rem;
 }
 
 h1{
-    font-family: 'Oswald', sans-serif;
+    font-family: 'Cantarell', sans-serif;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #252525;
 }
 
-menu{
+#menu{
     font-size: 110%;
     letter-spacing: 1px;
     list-style-type: none;
 }
 
-menu > li{
+#menu > li{
     margin-bottom: 1em;
 }
 
 .active{
     border-bottom: 1px solid #9b3737;
 }
+
+/* Styles for the main content and footer sections */
 main{
     background-color: lightblue;
-    /* Ensure the main content takes up available space */
+    padding-top: 80px; /* Pushes content down so the fixed header doesn't hide it */
+    padding-left: 1rem;
+    padding-right: 1rem;
     flex: 1 0 auto;
 }
 
 footer {
     background-color: orangered;
+    padding: 1rem;
 }
-
-
-
