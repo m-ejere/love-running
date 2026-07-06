@@ -20,7 +20,13 @@ body{
 /* Styles for the header, main content, and footer sections */
 
 header {
-    background-color: lightcoral;
+    background-color: white;
+    padding: 0 rem;
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    top: 0;
+
 }
 
 h1{
