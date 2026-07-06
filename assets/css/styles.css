@@ -21,16 +21,48 @@ body{
 
 header {
     background-color: white;
-    padding: 0 rem;
+    padding: 0;
     position: fixed;
     z-index: 99;
     width: 100%;
-    top: 0;
+    box-shadow: 0 2px 2px #3a3a3a;
 
+
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+
+
+}
+
+/* Navbar styles with dropdown menu */
+
+nav{
+    position: absolute;
+    background-color: white;
 }
 
 h1{
     font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #252525;
+}
+
+menu{
+    font-size: 110%;
+    letter-spacing: 1px;
+    list-style-type: none;
+}
+
+menu > li{
+    margin-bottom: 1em;
+}
+
+.active{
+    border-bottom: 1px solid #9b3737;
 }
 main{
     background-color: lightblue;
