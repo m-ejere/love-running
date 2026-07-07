@@ -26,6 +26,11 @@ h1, h2, h3 {
     color: #252525;
 }
 
+/* Utility class to hide headings from view while remaining readable for SEO */
+.hidden-heading {
+    display: none;
+}
+
 /* Styles for the header, main content, and footer sections */
 header {
     background-color: white;
@@ -143,7 +148,7 @@ hr {
     margin: 5px 0;
 }
 
-/* NEW: Mobile styling for the newly added circular image block */
+/* Mobile styling for the circular image block */
 #benefits-image {
     display: flex;
     justify-content: center;
@@ -157,6 +162,37 @@ hr {
     max-width: 300px;
     max-height: 300px;
     border-radius: 50%;
+}
+
+/* Meetup Times Section Layout Styles */
+#times {
+    background: url('../images/dublin-city.webp') no-repeat center center/cover;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#times > div {
+    color: #fafafa;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    text-align: center;
+    flex-grow: 1;
+    flex-basis: 200px;
+    border: 2px solid white;
+}
+
+#times h3 {
+    color: #fafafa;
+}
+
+/* Gallery Page Styles */
+#photos {
+    line-height: 0; /* Removes default vertical workspace gap between layout inline image items */
+}
+
+#photos img {
+    width: 100%;
+    line-height: 1em; /* Retains alt description text legibility if loading breaks */
 }
 
 /* Footer styles */
@@ -178,6 +214,14 @@ hr {
    Media Queries
    ========================================================================== */
 
+/* Landscape held smartphones and larger (New Gallery Media Query) */
+@media screen and (min-width: 480px) {
+    #photos {
+        column-count: 2;
+        column-gap: 0;
+    }
+}
+
 /* Tablet devices and larger (768px and up) */
 @media screen and (min-width: 768px) {
     nav {
@@ -193,7 +237,7 @@ hr {
     }
 
     #menu > li {
-        margin-bottom: 0; /* Reset mobile margin */
+        margin-bottom: 0; 
         padding-left: 1rem;
     }
 
@@ -209,7 +253,7 @@ hr {
     }
 
     main {
-        margin-top: 79px; /* Adjust spacing since the header became taller */
+        margin-top: 79px; 
     }
 
     /* Tablet layout shifts for the hero overlay text */
@@ -218,7 +262,7 @@ hr {
         right: 50px;
     }
 
-    /* NEW: Reasons section tablet responsiveness styling */
+    /* Reasons section tablet responsiveness styling */
     #benefits-physical,
     #benefits-mental {
         display: flex;
@@ -235,6 +279,11 @@ hr {
         align-self: flex-end;
         text-align: end;
     }
+
+    /* Gallery masonry responsive rule for tablet width views */
+    #photos {
+        column-count: 3;
+    }
 }
 
 /* Laptop devices and larger (992px and up) */
@@ -242,9 +291,14 @@ hr {
     #menu a:hover {
         border-bottom: 1px solid #9b3737;
     }
+
+    /* Gallery masonry responsive rule for desktop/laptop views */
+    #photos {
+        column-count: 4;
+    }
 }
 
-/* NEW: Desktop devices and larger (1200px and up) */
+/* Desktop devices and larger (1200px and up) */
 @media screen and (min-width: 1200px) {
     #benefits {
         display: flex;
@@ -275,7 +329,7 @@ hr {
         order: 3;
     }
     
-    /* Optional design reset: Reset width of inner cards to fit 33% columns perfectly */
+    /* Reset width of inner cards to fit 33% columns perfectly */
     #benefits-physical > div,
     #benefits-mental > div {
         width: 100%;
