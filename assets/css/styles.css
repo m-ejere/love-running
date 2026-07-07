@@ -17,9 +17,7 @@ body {
     font-family: 'Cantarell', sans-serif;
 }
 
-/* STEP 1: Moved heading styles here from below 
-  and added h2, h3 selectors separated by commas 
-*/
+/* Base Headings Style Rule */
 h1, h2, h3 {
     font-family: 'Cantarell', sans-serif;
     font-weight: 700;
@@ -66,7 +64,6 @@ nav {
     display: none;
 }
 
-/* FIXED: Changed from class selector (.) to ID selector (#) to match HTML */
 #nav-toggle-label {
     font-size: 2rem;
 }
@@ -99,12 +96,11 @@ main {
     height: 600px;
     width: 100%;
     background: url('../images/hero-image.webp') no-repeat center center/cover;
-    position: relative; /* STEP 2: Added position relative so absolute child works */
+    position: relative;
 }
 
-/* STEP 3: Mobile styling for the cover-text overlay */
+/* Mobile styling for the cover-text overlay */
 #cover-text {
-    /* rgba: Red, Green, Blue, Alpha (opacity) */
     background-color: rgba(241, 109, 107, 0.6); 
     font-size: 130%;
     position: absolute;
@@ -115,9 +111,52 @@ main {
     padding-left: 10px;
 }
 
-/* STEP 4: Force text colors to white inside the cover-text overlay */
+/* Force text colors to white inside the cover-text overlay */
 #cover-text > h2, #cover-text > h3 {
     color: #ffffff;
+}
+
+/* Reasons section styles */
+#reasons {
+    width: 90%;
+    margin: 20px auto;
+}
+
+#reasons h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 280%;
+}
+
+#benefits-physical > div,
+#benefits-mental > div {
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+
+#benefits p {
+    padding: 0 20px;
+}
+
+hr {
+    border-top: 1px solid #3a3a3a;
+    margin: 5px 0;
+}
+
+/* NEW: Mobile styling for the newly added circular image block */
+#benefits-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#circle-cover-bg {
+    background: url('../images/reasons-image.webp') no-repeat center center/cover;
+    width: 300px;
+    height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 50%;
 }
 
 /* Footer styles */
@@ -173,10 +212,28 @@ main {
         margin-top: 79px; /* Adjust spacing since the header became taller */
     }
 
-    /* STEP 5: Added styling inside the media query for tablet view layout changes */
+    /* Tablet layout shifts for the hero overlay text */
     #cover-text {
         width: 300px;
         right: 50px;
+    }
+
+    /* NEW: Reasons section tablet responsiveness styling */
+    #benefits-physical,
+    #benefits-mental {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #benefits-physical > div,
+    #benefits-mental > div {
+        width: 75%;
+    }
+
+    #benefits-mental > div {
+        align-self: flex-end;
+        text-align: end;
     }
 }
 
@@ -184,5 +241,43 @@ main {
 @media screen and (min-width: 992px) {
     #menu a:hover {
         border-bottom: 1px solid #9b3737;
+    }
+}
+
+/* NEW: Desktop devices and larger (1200px and up) */
+@media screen and (min-width: 1200px) {
+    #benefits {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #benefits-physical,
+    #benefits-mental {
+        width: 33%;
+    }
+
+    #benefits-image {
+        width: 33%;
+    }
+
+    /* Re-order elements using CSS order property so the image sits directly in the middle */
+    #benefits-physical {
+        order: 1;
+    }
+
+    #benefits-image {
+        order: 2;
+    }
+
+    #benefits-mental {
+        order: 3;
+    }
+    
+    /* Optional design reset: Reset width of inner cards to fit 33% columns perfectly */
+    #benefits-physical > div,
+    #benefits-mental > div {
+        width: 100%;
     }
 }
