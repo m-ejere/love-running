@@ -260,7 +260,7 @@ hr {
 }
 
 /* ==========================================================================
-   Media Queries
+    Media Queries
    ========================================================================== */
 
 /* Landscape held smartphones and larger */
@@ -334,17 +334,20 @@ hr {
         column-count: 3;
     }
 
-    /* NEW: Sign Up Form Responsive Styling & Positioning for Tablet/Desktop */
+    /* FIX: Replaced absolute tracking with flex layout flow */
     #signup {
         background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 40px 10%;
         position: relative;
     }
 
     #signup-form {
         max-width: 400px;
-        position: absolute;
-        left: 10%;
-        top: 150px;
+        width: 100%;
+        margin-top: 40px;
     }
 
     /* Visual Feedback Hover Interactive States */
